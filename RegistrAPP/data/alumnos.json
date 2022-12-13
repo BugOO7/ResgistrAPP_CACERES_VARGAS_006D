@@ -1,0 +1,29 @@
+{
+  "alumnos": [
+    {
+      "nombre": "felipe caceres",
+      "fecha": "",
+      "id": 1
+    },
+    {
+      "nombre": "Enrique Vargas",
+      "fecha": "",
+      "id": 2
+    },
+    {
+      "nombre": "felipe",
+      "fecha": "",
+      "id": 3
+    },
+    {
+      "nombre": "Marcelo Montecino",
+      "fecha": "",
+      "id": 4
+    },
+    {
+      "nombre": "Felipe Caceres Jesus ",
+      "fecha": "",
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+<ion-header>
+  
+  <ion-toolbar color="primary">
+    <ion-title>Listar Asistencias</ion-title>
+    <ion-buttons slot="end">
+      <ion-button 
+      expand="block" 
+      class="ion-margin" 
+      routerLink="/generarqr">
+      Ver Asistencias
+    </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let a of alumnos; let indexArray = index" [routerLink]="['/detail-alumno',a.id]">
+      <ion-label>{{a.nombre}} </ion-label>
+      <ion-label>{{a.fecha}}</ion-label>
+      </ion-item>
+      
+  </ion-list>
+
+</ion-content>

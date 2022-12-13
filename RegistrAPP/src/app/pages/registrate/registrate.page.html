@@ -1,0 +1,82 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button (click)="mostrarMenu()">
+      <ion-icon slot="start" name="menu-outline"></ion-icon>
+     </ion-button>
+  </ion-buttons>
+  <icon-card>
+    <img src="assets/logo.png" class="ion-padding" class="logo">
+  </icon-card>
+</ion-toolbar>
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header>
+    </ion-card-header>
+    <ion-card-content>      
+      <ion-card-title class="center">Registrate</ion-card-title><br>
+    </ion-card-content>
+  </ion-card>
+<br>
+<form #formulario="ngForm" (ngSubmit)="onSubmit()">
+  <ion-item>
+    <ion-label>Rut: </ion-label>
+    <ion-input type="number" placeholder="Rut"
+               name="number" [(ngModel)]= "usuario.number" required>
+               
+    </ion-input>
+  </ion-item>
+<br>
+  <ion-item>
+    <ion-label>Email: </ion-label>
+    <ion-input type="email" placeholder="Email"
+               name="email" value="" [(ngModel)]= "usuario.email"
+               pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+               required>
+    </ion-input>
+  </ion-item>
+
+</form>
+
+<ion-list>
+  <ion-radio-group value="biff">
+
+
+    <ion-item>
+      <ion-label>Estudiante</ion-label>
+      <ion-radio slot="start" value="a"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Alumno</ion-label>
+      <ion-radio slot="start" value="b"></ion-radio>
+    </ion-item>
+
+
+  </ion-radio-group>
+</ion-list>
+
+<ion-item>
+  <ion-label>Contraseña: </ion-label>
+  <ion-input type="password"	 placeholder="Contraseña"
+             name="password" value="" [(ngModel)]= "usuario.password"
+             required>
+  </ion-input>
+</ion-item>
+<br>
+<ion-item>
+  <ion-label>Contraseña: </ion-label>
+  <ion-input type="password"	 placeholder="Confirme Contraseña"
+             name="password2" value="" [(ngModel)]= "usuario.password2"
+             required>
+  </ion-input>
+</ion-item>
+
+
+<ion-button [disabled] ="formulario.invalid"
+type="submit" color="black" class="boton" routerLink="/mensajenviado">
+Siguiente
+</ion-button>
+
+</ion-content>

@@ -1,0 +1,51 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-button (click)="mostrarMenu()">
+      <ion-icon slot="start" name="menu-outline"></ion-icon>
+     </ion-button>
+  </ion-buttons>
+  <icon-card>
+    <img src="assets/logo.png" class="ion-padding" class="logo">
+  </icon-card>
+</ion-toolbar>
+<ion-content>
+  <ion-card class="ion-text-center">
+    <ion-card-content>
+
+      <ion-item>
+        <ion-label position="fixed">Fecha: </ion-label>
+        <ion-input type="text" [(ngModel)]="usuario.nom" required></ion-input>
+      </ion-item>
+
+      <ion-button 
+          expand="block" 
+          class="ion-margin" 
+          (click)="generaScan()">
+          Generate QR Code  
+      </ion-button>
+
+      <qrcode 
+        [qrdata]="qrCodeString" 
+        [width]="256" 
+        [errorCorrectionLevel]="'M'">
+      </qrcode>
+    </ion-card-content>
+ </ion-card>
+
+ <ion-button 
+    expand="block" 
+    class="ion-margin" 
+    (click)="verScan()">
+        Ver QR Code  
+  </ion-button>
+
+  <ion-item>
+    <ion-label class="ion-text-wrap">Fecha Ingresada: {{scannedResult}}</ion-label>
+  </ion-item>
+  <ion-button 
+  expand="block" 
+  class="ion-margin" 
+  routerLink="/listar-asistencias">
+  Ver Asistencias
+</ion-button>
+</ion-content>

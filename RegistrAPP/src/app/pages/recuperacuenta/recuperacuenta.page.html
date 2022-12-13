@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="mostrarMenu()">
+        <ion-icon slot="start" name="menu-outline"></ion-icon>
+       </ion-button>
+    </ion-buttons>
+    <icon-card>
+      <img src="assets/logo.png" class="ion-padding" class="logo">
+    </icon-card>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <br>
+  <br>
+  <ion-card>
+    <ion-card-header>
+    </ion-card-header>
+    <ion-card-content>      
+      <ion-card-subtitle class="center">RECUPERA TU CUENTA</ion-card-subtitle><br>
+        <ion-card-subtitle>Introduce tu correo institucional</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+  
+
+
+
+  <form #formulario="ngForm" (ngSubmit)="onSubmit()">
+    <br>
+    <br>
+    <ion-item>
+      <ion-label>Email </ion-label>
+      <ion-input type="email" placeholder="@direccion.com"
+                 name="email" value="" [(ngModel)]= "usuario.email"
+                 pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+                 required>
+      </ion-input>
+    </ion-item>
+    <br>
+
+    <br>
+    <br>
+    <ion-button [disabled] ="formulario.invalid"   color="black"
+    type="submit" class="boton"  routerLink="/mensajeregistro">
+Siguiente
+</ion-button>
+  </form>
+
+</ion-content>

@@ -1,0 +1,23 @@
+<ion-header>
+  
+  <ion-toolbar color="primary">
+    <ion-title>Listar Asistencias</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/agregar-asistencias']">
+         Agregar
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let a of asistencias; let indexArray = index" [routerLink]="['/detail-asistencia',a.id]">
+      <ion-label>{{a.seccion}} </ion-label>
+      <ion-label>{{a.fecha}}</ion-label>
+      </ion-item>
+      
+  </ion-list>
+
+</ion-content>

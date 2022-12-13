@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Agregar</ion-title>
+    <ion-buttons slot="end">
+      <ion-button [routerLink]="['/listar-asistencias']">
+         Listar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">seccion: </ion-label>
+      <ion-input type="text" name="txtSeccion" [(ngModel)]="newAsistencia.seccion" required></ion-input>
+    </ion-item>
+
+    <ion-item lines="full">
+      <ion-label position="floating">fecha: </ion-label>
+      <ion-input type="text" name="txtFecha" [(ngModel)]="newAsistencia.fecha" required></ion-input>
+    </ion-item>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="crearAsistencia()" expand="block" fill="outline" color="success" shape="round">
+          Agregar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>
